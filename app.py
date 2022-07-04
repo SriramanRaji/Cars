@@ -1,5 +1,4 @@
 from email import header
-import imp
 from flask import Flask, render_template, request
 import csv
 
@@ -40,7 +39,7 @@ def submit():
         
         createFile(headers, data)
 
-        return render_template('index.html')
+        return render_template('result.html')
 
 if __name__ == '__main__':
     app.debug = True

@@ -626,13 +626,15 @@ section {
     color: var(--black);
 }
 
+.result {
+    margin: 8%;
+}
 
 .result .heading {
     padding-bottom: 2rem;
     text-align: center;
     font-size: 4.5rem;
     color: var(--black);
-    margin-top: 10%;
 }
 
 .result .box-container {

@@ -1,6 +1,7 @@
 from email import header
 from flask import Flask, render_template, request
 import csv
+import time
 
 headers = ['cruiseControl', 'headsUpDisplay', 'tractionControl', 'heatedSeats', 'sunRoof', 'rainSensingWipers', 'airBagsCount']
 
@@ -38,6 +39,8 @@ def submit():
             data.append('Yes' if request.form.get(key) == 'on' else '')
         
         createFile(headers, data)
+
+        time.sleep(3)
 
         return render_template('result.html')
 

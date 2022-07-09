@@ -2,6 +2,7 @@ from email import header
 from flask import Flask, render_template, request
 import csv
 import time
+import json
 
 headers = ['cruiseControl', 'headsUpDisplay', 'tractionControl', 'heatedSeats', 'sunRoof', 'rainSensingWipers', 'airBagsCount']
 
@@ -42,7 +43,10 @@ def submit():
 
         time.sleep(3)
 
-        return render_template('result.html')
+        with open('target/results.json') as json_file:
+            data = json.load(json_file)
+
+        return render_template('result.html', content=data)
 
 if __name__ == '__main__':
     app.debug = True

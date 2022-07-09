@@ -68,16 +68,22 @@
 
         <div class="box-container">
 
+            {%for i in content%}
+
             <div class="box">
                 <div>
-                    <i class="fas fa-car"></i>
-                </div>
-                <div>
-                    <h3>car selling</h3>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis, nisi.</p>
+                    <h3>{{content[i]}}</h3>
+                    <p>Matching Percentage : {{i}}</p>
                     <a href="#" class="btn"> read more</a>
                 </div>
+                <div>
+                    <h3>&nbsp;</h3>
+                    <i class="fas fa-car"></i>
+                </div>
             </div>
+
+            {%endfor%}
+
 
         </div>
 
